@@ -92,12 +92,20 @@ async def signin(
         grade= data['childclass']
         curriculum= data['childsyllabus']
         profile_img=data['childimageurl']
+        mobileno=results['parentsmobileno']
+        childIndex=int(output[1].split('.'))-1
+
+
 
         return OrderedDict({"success": True, "student_name": student_name,
         "medium_of_instruction": medium_of_instruction,
         "grade": grade,
         "curriculum": curriculum,
-        "profile_img":profile_img
+        "profile_img":profile_img,
+         "mobileno":mobileno,
+         "childIndex":childIndex
+
+
         })
         # return {"message": "Signin successful", "mobile": output[0], "child": output[1][:1]}
     except Exception as e:
